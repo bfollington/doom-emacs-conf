@@ -48,3 +48,12 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;; CLIPBOARD
+(package! simpleclip)
+
+;; Google Search
+(package! google-this)
+
+;; Floating autocomplete
+(package! vertico-posframe)
