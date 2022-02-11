@@ -73,8 +73,20 @@
 (define-key evil-normal-state-map "gh" 'lsp-describe-thing-at-point)
 (define-key evil-normal-state-map "gss" 'magit-status)
 
+(after! smartparens
+  (global-set-key (kbd "C-(") 'sp-forward-barf-sexp)
+  (global-set-key (kbd "C-)") 'sp-forward-slurp-sexp)
+  (global-set-key (kbd "C-9") 'sp-backward-sexp)
+  (global-set-key (kbd "C-0") 'sp-forward-sexp)
+  (global-set-key (kbd "M-(") 'sp-wrap-round)
+  (global-set-key (kbd "M-[") 'sp-wrap-square)
+  (global-set-key (kbd "M-{") 'sp-wrap-curly)
+  (define-key evil-normal-state-map "vn" 'sp-select-next-thing))
+  
+
+
 (after! switch-window
-        (global-set-key (kbd "C-w g") 'switch-window))
+  (global-set-key (kbd "C-w g") 'switch-window))
 
 ;; LSP
 (add-hook 'lsp-after-apply-edits-hook
